@@ -47,7 +47,6 @@
         self.presentingViewController.view.alpha = 0.8;
 
         self.presentedViewController.view.frame = self.frameOfPresentedViewInContainerView;
-        
     }
 
 }
@@ -58,8 +57,6 @@
         self.presentingViewController.view.alpha = 1;
         self.presentingViewController.view.transform = CGAffineTransformIdentity;
         self.presentingViewController.view.layer.cornerRadius = 0;
-//        self.presentedViewController.view.frame =  CGRectMake(0, 0,
-//                                                              self.containerView.bounds.size.width, self.containerView.bounds.size.height);
 
         CGRect offScreenFrame = CGRectMake(0, self.containerView.bounds.size.height,
                                            self.containerView.bounds.size.width, self.containerView.bounds.size.height);

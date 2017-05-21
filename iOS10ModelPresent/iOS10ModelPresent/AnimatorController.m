@@ -28,12 +28,6 @@
 {
     UIViewController* toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIViewController* fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-    [[transitionContext containerView] addSubview:toViewController.view];
-    CGRect toOriginFrame = toViewController.view.frame;
-    toOriginFrame.origin.y = [UIScreen mainScreen].bounds.size.height;
-    toViewController.view.frame = toOriginFrame;
-    CGRect toFinalFrame = toViewController.view.frame;
-    toFinalFrame.origin.y = 28;
 
 
     CGRect offScreenFrame = CGRectMake(0, transitionContext.containerView.bounds.size.height,
@@ -49,23 +43,25 @@
                                  toViewController.view.layer.cornerRadius = 0;
 
                                  fromViewController.view.frame = offScreenFrame;
-
                              } completion:^(BOOL finished) {
                                  [transitionContext completeTransition:finished];
                              }];
             break;
         };
         case AnimatorPresent: {
+            [[transitionContext containerView] addSubview:toViewController.view];
+            toViewController.view.frame = offScreenFrame;
+            CGRect toFinalFrame = toViewController.view.frame;
+            toFinalFrame.origin.y = 28;
 
             [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
                 CGFloat scale = 1 - (40 / fromViewController.view.frame.size.height);
                 fromViewController.view.transform = CGAffineTransformMakeScale(scale, scale);
-//                fromViewController.view.transform = CGAffineTransformIdentity;
                 fromViewController.view.alpha = 0.8;
                 fromViewController.view.layer.cornerRadius = 8;
                 fromViewController.view.layer.masksToBounds = YES;
 
-                toViewController.view.frame = toFinalFrame;
+                toViewController.view.frame = [transitionContext finalFrameForViewController:toViewController];
                 [toViewController.view roundAt:UIRectCornerTopLeft | UIRectCornerTopRight withRadius:8.0];
             }completion:^(BOOL finished) {
                 [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
