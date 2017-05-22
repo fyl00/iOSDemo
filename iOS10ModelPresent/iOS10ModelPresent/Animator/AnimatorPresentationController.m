@@ -20,25 +20,6 @@
     return CGRectZero;
 }
 
-- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
-
-    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
-
-    self.presentingViewController.view.transform = CGAffineTransformIdentity;
-
-    [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
-
-        CGFloat scale = 1 - (40/self.presentingViewController.view.frame.size.height);
-        self.presentingViewController.view.transform = CGAffineTransformMakeScale(scale, scale);
-
-        CGFloat offset = 28.0;
-        CGRect frame = CGRectMake(0, offset, size.width, size.height);
-        self.presentedViewController.view.frame = frame;
-
-    } completion:nil];
-    
-}
-
 - (void)presentationTransitionDidEnd:(BOOL)completed {
 
     if (completed) {
@@ -58,8 +39,9 @@
         self.presentingViewController.view.transform = CGAffineTransformIdentity;
         self.presentingViewController.view.layer.cornerRadius = 0;
 
-        CGRect offScreenFrame = CGRectMake(0, self.containerView.bounds.size.height,
-                                           self.containerView.bounds.size.width, self.containerView.bounds.size.height);
+        CGSize size = self.containerView.bounds.size;
+        CGRect offScreenFrame = CGRectMake(0, size.height,
+                                           size.width, size.height);
         self.presentedViewController.view.frame = offScreenFrame;
     }
 

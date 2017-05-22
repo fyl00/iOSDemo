@@ -8,11 +8,6 @@
 
 #import "ModelViewController.h"
 
-@interface ModelViewController ()
-
-
-@end
-
 @implementation ModelViewController
 
 - (void)viewDidLoad {

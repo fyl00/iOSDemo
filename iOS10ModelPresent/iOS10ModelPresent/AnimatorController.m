@@ -44,7 +44,6 @@
                                  toViewController.view.layer.cornerRadius = 0;
 
                                  fromViewController.view.frame = offScreenFrame;
-//                                 [transitionContext completeTransition:YES];
                              } completion:^(BOOL finished) {
                                  [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
                              }];
@@ -59,7 +58,6 @@
             [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
                 CGFloat scale = 1 - (40 / fromViewController.view.frame.size.height);
                 fromViewController.view.transform = CGAffineTransformMakeScale(scale, scale);
-//                fromViewController.view.frame = toFinalFrame;
                 fromViewController.view.alpha = 0.8;
                 fromViewController.view.layer.cornerRadius = 8;
                 fromViewController.view.layer.masksToBounds = YES;

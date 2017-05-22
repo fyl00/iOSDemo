@@ -16,8 +16,6 @@
 @property (nonatomic) UIViewController *fromVC;
 @property (nonatomic) BOOL interactionInProgress;
 
-- (id)initWithAnimator:(AnimatorController *) animator;
-
 - (void)registerGestureto:(UIViewController *)toVC;
 
 @end

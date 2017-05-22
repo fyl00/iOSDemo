@@ -17,16 +17,6 @@
 
 @implementation AnimatorInteractive
 
-- (id)initWithAnimator:(AnimatorController *)animator {
-    if (self == nil) {
-        self = [[AnimatorInteractive alloc] init];
-//        UIViewController *toVC = animator 
-        // registerGesture
-    }
-
-    return self;
-}
-
 - (void)registerGestureto:(UIViewController *)toVC {
 
     self.toVC = toVC;
