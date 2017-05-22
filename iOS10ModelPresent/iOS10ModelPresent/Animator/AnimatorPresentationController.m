@@ -42,7 +42,7 @@
 - (void)presentationTransitionDidEnd:(BOOL)completed {
 
     if (completed) {
-        CGFloat scale = 1 - (40/self.presentingViewController.view.frame.size.height);
+        CGFloat scale = 1 - (40 / self.presentingViewController.view.frame.size.height);
         self.presentingViewController.view.transform = CGAffineTransformMakeScale(scale, scale);
         self.presentingViewController.view.alpha = 0.8;
 

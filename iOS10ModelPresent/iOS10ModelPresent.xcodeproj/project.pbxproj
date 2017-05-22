@@ -20,6 +20,7 @@
 		95AF080A1ECFF01B00319236 /* AnimatorPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AF08091ECFF01B00319236 /* AnimatorPresentationController.m */; };
 		95AF080D1ED1410000319236 /* AnimatorTransitioningDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AF080C1ED1410000319236 /* AnimatorTransitioningDelegate.m */; };
 		95AF08101ED1804C00319236 /* UIView+Round.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AF080F1ED1804C00319236 /* UIView+Round.m */; };
+		95AF08141ED2DA3F00319236 /* AnimatorInteractive.m in Sources */ = {isa = PBXBuildFile; fileRef = 95AF08131ED2DA3F00319236 /* AnimatorInteractive.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		95AF080C1ED1410000319236 /* AnimatorTransitioningDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnimatorTransitioningDelegate.m; path = Animator/AnimatorTransitioningDelegate.m; sourceTree = "<group>"; };
 		95AF080E1ED1804C00319236 /* UIView+Round.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Round.h"; path = "Animator/UIView+Round.h"; sourceTree = "<group>"; };
 		95AF080F1ED1804C00319236 /* UIView+Round.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Round.m"; path = "Animator/UIView+Round.m"; sourceTree = "<group>"; };
+		95AF08121ED2DA3F00319236 /* AnimatorInteractive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnimatorInteractive.h; path = Animator/AnimatorInteractive.h; sourceTree = "<group>"; };
+		95AF08131ED2DA3F00319236 /* AnimatorInteractive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnimatorInteractive.m; path = Animator/AnimatorInteractive.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +166,8 @@
 			children = (
 				95AF08011ECDC12900319236 /* AnimatorController.h */,
 				95AF08021ECDC12900319236 /* AnimatorController.m */,
+				95AF08121ED2DA3F00319236 /* AnimatorInteractive.h */,
+				95AF08131ED2DA3F00319236 /* AnimatorInteractive.m */,
 				95AF08081ECFF01B00319236 /* AnimatorPresentationController.h */,
 				95AF08091ECFF01B00319236 /* AnimatorPresentationController.m */,
 				95AF080B1ED1410000319236 /* AnimatorTransitioningDelegate.h */,
@@ -314,6 +319,7 @@
 				95AF08061ECDD6D800319236 /* ModelViewController.m in Sources */,
 				95AF07D61ECDBDF400319236 /* ViewController.m in Sources */,
 				95AF07D31ECDBDF400319236 /* AppDelegate.m in Sources */,
+				95AF08141ED2DA3F00319236 /* AnimatorInteractive.m in Sources */,
 				95AF08101ED1804C00319236 /* UIView+Round.m in Sources */,
 				95AF080D1ED1410000319236 /* AnimatorTransitioningDelegate.m in Sources */,
 				95AF07D01ECDBDF400319236 /* main.m in Sources */,
