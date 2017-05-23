@@ -15,11 +15,11 @@
     // Do any additional setup after loading the view.
     [_dismisButton addTarget:self action:@selector(dismissSelf) forControlEvents:UIControlEventTouchUpInside];
 
+    self.modalPresentationCapturesStatusBarAppearance = YES;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)dismissSelf {
