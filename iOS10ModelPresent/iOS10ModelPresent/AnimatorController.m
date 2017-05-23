@@ -39,9 +39,12 @@
                                   delay:0
                                 options:UIViewAnimationOptionCurveEaseOut
                              animations:^{
-                                 toViewController.view.alpha = 1;
-                                 toViewController.view.transform = CGAffineTransformIdentity;
-                                 toViewController.view.layer.cornerRadius = 0;
+                                 toViewController.view.alpha = 0.9;
+
+                                 if (!self.isInteractive) {
+                                     toViewController.view.transform = CGAffineTransformIdentity;
+                                     toViewController.view.layer.cornerRadius = 0;
+                                 }
 
                                  fromViewController.view.frame = offScreenFrame;
                              } completion:^(BOOL finished) {
@@ -58,7 +61,7 @@
             [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
                 CGFloat scale = 1 - (40 / fromViewController.view.frame.size.height);
                 fromViewController.view.transform = CGAffineTransformMakeScale(scale, scale);
-                fromViewController.view.alpha = 0.8;
+                fromViewController.view.alpha = 0.68;
                 fromViewController.view.layer.cornerRadius = 8;
                 fromViewController.view.layer.masksToBounds = YES;
 

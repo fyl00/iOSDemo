@@ -26,7 +26,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     [_addVCButton addTarget:self action:@selector(presentChildVC) forControlEvents:UIControlEventTouchUpInside];
     self.animator = [[AnimatorController alloc] init];
-    self.dismissInteractor = [[AnimatorInteractive alloc] init];
+    self.dismissInteractor = [[AnimatorInteractive alloc] initWithAnimator:self.animator];
 }
 
 

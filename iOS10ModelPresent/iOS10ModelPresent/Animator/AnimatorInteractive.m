@@ -17,6 +17,15 @@
 
 @implementation AnimatorInteractive
 
+- (id)initWithAnimator:(AnimatorController *)animator {
+    if (self == nil) {
+        self = [[AnimatorInteractive alloc] init];
+    }
+    self.animator = animator;
+
+    return self;
+}
+
 - (void)registerGestureto:(UIViewController *)toVC {
 
     self.toVC = toVC;
@@ -32,6 +41,7 @@
     switch (pan.state) {
         case UIGestureRecognizerStateBegan:{
             self.interactionInProgress = YES;
+            self.animator.isInteractive = YES;
             [self.toVC dismissViewControllerAnimated:YES completion:nil];
             break;
         }
@@ -54,6 +64,7 @@
                 [self cancelInteractiveTransition];
             }
             self.interactionInProgress = NO;
+            self.animator.isInteractive = NO;
             break;
         }
         default:
