@@ -53,6 +53,7 @@
             } else {
                 [self cancelInteractiveTransition];
             }
+            self.interactionInProgress = NO;
             break;
         }
         default:
@@ -64,7 +65,6 @@
 - (void)finishInteractiveTransition {
     [super finishInteractiveTransition];
     [self.toVC.view removeGestureRecognizer: self.pan];
-    self.interactionInProgress = NO;
 }
 
 @end
