@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -35,22 +35,8 @@
                                     <action selector="performDefault:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eXw-ea-b1z"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QsX-1n-326">
-                                <rect key="frame" x="137.5" y="150" width="100" height="50"/>
-                                <color key="backgroundColor" red="0.1803921568627451" green="0.80000000000000004" blue="0.44313725490196076" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="Jzh-c9-rxT"/>
-                                    <constraint firstAttribute="height" constant="50" id="vXS-pJ-frb"/>
-                                </constraints>
-                                <state key="normal" title="Barrier">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="performBarrier:" destination="BYZ-38-t0r" eventType="touchUpInside" id="40d-ch-Vtq"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jgy-BY-8zV">
-                                <rect key="frame" x="137.5" y="236" width="100" height="50"/>
+                                <rect key="frame" x="137.5" y="150" width="100" height="50"/>
                                 <color key="backgroundColor" red="0.90196078431372551" green="0.49411764705882355" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="CIz-Ze-3Da"/>
@@ -64,7 +50,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O5V-Mw-2rC">
-                                <rect key="frame" x="137.5" y="322" width="100" height="50"/>
+                                <rect key="frame" x="137.5" y="236" width="100" height="50"/>
                                 <color key="backgroundColor" red="0.60784313725490191" green="0.34901960784313724" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="4Lv-8f-SVy"/>
@@ -81,13 +67,11 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="LGJ-7r-7ih" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="10i-Vy-fD9"/>
-                            <constraint firstItem="Jgy-BY-8zV" firstAttribute="top" secondItem="QsX-1n-326" secondAttribute="bottom" constant="36" id="111-T6-v1q"/>
                             <constraint firstItem="LGJ-7r-7ih" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="44" id="5tO-r3-9qk"/>
                             <constraint firstItem="O5V-Mw-2rC" firstAttribute="top" secondItem="Jgy-BY-8zV" secondAttribute="bottom" constant="36" id="ASA-7V-2ET"/>
                             <constraint firstItem="O5V-Mw-2rC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UMn-ff-w4o"/>
-                            <constraint firstItem="QsX-1n-326" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bgF-ui-yKP"/>
-                            <constraint firstItem="QsX-1n-326" firstAttribute="top" secondItem="LGJ-7r-7ih" secondAttribute="bottom" constant="36" id="jm4-q3-u2w"/>
                             <constraint firstItem="Jgy-BY-8zV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lXV-nX-zza"/>
+                            <constraint firstItem="Jgy-BY-8zV" firstAttribute="top" secondItem="LGJ-7r-7ih" secondAttribute="bottom" constant="36" id="xmd-Bt-3iU"/>
                         </constraints>
                     </view>
                 </viewController>

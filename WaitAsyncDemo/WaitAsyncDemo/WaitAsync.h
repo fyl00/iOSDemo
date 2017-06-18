@@ -11,7 +11,6 @@
 @interface WaitAsync : NSObject
 
 + (void)default;
-+ (void)barrier;
 + (void)semaphore;
 + (void)group;
 

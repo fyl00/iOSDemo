@@ -43,11 +43,6 @@
     [WaitAsync default];
 }
     
-- (IBAction)performBarrier:(id)sender {
-    NSLog(@"💭Perform BARRIER...");
-    [WaitAsync barrier];
-}
-    
 - (IBAction)performSemaphore:(id)sender {
     NSLog(@"💭Perform SEMAPHORE...");
     [WaitAsync semaphore];

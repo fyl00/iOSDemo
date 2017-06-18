@@ -31,58 +31,30 @@
     
 }
     
-+ (void)barrier {
-    
-    dispatch_queue_t queue = dispatch_queue_create("me.slowwalker.barrierQueue", DISPATCH_QUEUE_CONCURRENT);
-    
-    dispatch_async(queue, ^{
-        NSLog(@"A START");
-        [NSThread sleepForTimeInterval:3];
-        NSLog(@"A FINISH");
-    });
-    dispatch_barrier_async(queue, ^{
-        NSLog(@"B START");
-        [NSThread sleepForTimeInterval:2];
-        NSLog(@"B FINISH");
-    });
-    dispatch_async(queue, ^{
-        [NSThread sleepForTimeInterval:5];
-        NSLog(@"C -> AFTER A&B");
-    });
-    dispatch_async(queue, ^{
-        [NSThread sleepForTimeInterval:1];
-        NSLog(@"D -> AFTER A&B");
-    });
-    
-}
-
 + (void)semaphore {
     
-    dispatch_queue_t queue = dispatch_queue_create("me.slowwalker.semaphoreQueue", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_queue_t queueA = dispatch_queue_create("me.slowwalker.semaphoreQueueA", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_queue_t queueB = dispatch_queue_create("me.slowwalker.semaphoreQueueB", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     
-    dispatch_semaphore_t semaphore = dispatch_semaphore_create(1);
-    
-    dispatch_async(queue, ^{
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-        NSLog(@"A START");
+    dispatch_async(queueA, ^{
+        NSLog(@"QueueA START");
         [NSThread sleepForTimeInterval:3];
-        NSLog(@"A FINISH");
+        NSLog(@"QueueA FINISH");
         dispatch_semaphore_signal(semaphore);
     });
     NSLog(@"semaphore");
-    dispatch_async(queue, ^{
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-        NSLog(@"B START");
+    dispatch_async(queueB, ^{
+        NSLog(@"QueueB START");
         [NSThread sleepForTimeInterval:1];
-        NSLog(@"B FINISH");
+        NSLog(@"QueueB FINISH");
         dispatch_semaphore_signal(semaphore);
     });
-    
-    dispatch_async(queue, ^{
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-        NSLog(@"C -> AFTER A&B");
-        dispatch_semaphore_signal(semaphore);
-    });
+
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    NSLog(@"C -> AFTER A&B");
+
 }
     
 + (void)group {
